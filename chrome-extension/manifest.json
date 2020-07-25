@@ -14,7 +14,7 @@
     },
     "browser_action": {
         "default_icon": "img/icon16.png",
-        "default_popup": "img/popup.html"
+        "default_popup": "html/popup.html"
     },
     "options_page": "html/options.html",
     "permissions": ["storage", "contextMenus"]
