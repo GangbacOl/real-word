@@ -1,6 +1,6 @@
 var menuItem = {
     id: 'addSelectionWord',
-    title: 'Add this word',
+    title: 'Add This Word',
     contexts: ['selection'],
 };
 
