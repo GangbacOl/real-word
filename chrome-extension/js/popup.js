@@ -1,3 +1,9 @@
+// document.addEventListener('DOMContentLoaded', function () {
+//     document.querySelector('body > div.footer > input[type=button]').addEventListener('click', function () {
+//         chrome.tabs.create({ url: 'html/options.html' });
+//     });
+// });
+
 chrome.storage.sync.get(['words'], function (result) {
     if (!result.words[0]) {
         var li = document.createElement('span');
