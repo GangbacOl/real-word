@@ -19,28 +19,17 @@ chrome.storage.sync.get(['words'], async (storageData) => {
     const translatedWords = await sendWords(storageData.words);
     for (var item in storageData.words) {
         const li = document.createElement('li');
-        const span = document.createElement('span');
-        const div = document.createElement('div');
-        const input = document.createElement('input');
-        const saveButton = document.createElement('input');
-        const cancelButton = document.createElement('input');
-        saveButton.setAttribute('type', 'button');
-        cancelButton.setAttribute('type', 'button');
-        saveButton.setAttribute('value', 'Save');
-        cancelButton.setAttribute('value', 'Cancel');
-        div.append(input, saveButton, cancelButton);
-        div.style.display = 'none';
-        span.innerText = translatedWords[item];
-        li.innerText = storageData.words[item] + ': ';
-        li.append(span, div);
+        const span_en = document.createElement('span');
+        const span_ko = document.createElement('span');
+        span_en.setAttribute('class', 'span-eng');
+        span_ko.setAttribute('class', 'span-kor');
+        span_en.innerText = storageData.words[item];
+        span_ko.innerText = translatedWords[item];
+        li.append(span_en, ': ', span_ko);
         document.querySelector('body > div.main > div').append(li);
-
-        span.onclick = () => {
-            span.style.display = 'none';
-            div.style.display = 'inline-block';
+        span_ko.onclick = () => {
+            // 네이버 영어사전 페이지
+            window.open(`https://en.dict.naver.com/#/search?query=${li.innerText.split(':')[0]}`);
         };
     }
 });
-
-// const spans = document.getElementsByTagName('span');
-// console.log(spans);
