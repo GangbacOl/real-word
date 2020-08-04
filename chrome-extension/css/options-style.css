@@ -14,8 +14,8 @@ body {
     align-items: center;
 }
 
-.header h1 {
-    font-size: 3em;
+.header .title h1 {
+    font-size: 2.4em;
     margin-right: 10px;
 }
 
@@ -40,9 +40,22 @@ body {
 
 .main {
     margin: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
 }
 
 .main div {
+    width: 50%;
+    min-width: 500px;
+    /* border: 1px solid blue; */
+}
+
+.main > div > h2 {
+    border-bottom: 1px solid black;
+    text-align: left;
+    font-size: 1.5em;
+    padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 .main div li {
